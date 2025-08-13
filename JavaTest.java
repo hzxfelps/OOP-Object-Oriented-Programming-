@@ -1,0 +1,78 @@
+import java.util.Scanner;
+public class JavaTest {
+    public static void main (String[] args) {
+        Scanner read = new Scanner(System.in);
+        Animal animais = new Animal();
+
+        System.out.println("Insira a quantidade de fichas a serem cadastradas: ");
+        int n1 = read.nextInt();
+
+        for (int i = 0; i < n1; i++){
+            read.nextLine();
+            System.out.println("Insira o nome do animal: ");
+            String nome = read.nextLine();
+
+            System.out.println("Insira a espécie do animal: ");
+            String especie = read.nextLine();
+
+            System.out.println("Insira a idade do animal: ");
+            int idade = read.nextInt();
+
+            System.out.println("Insira o peso do animal: ");
+            Double peso = read.nextDouble();
+
+            animais.setNome(nome);
+            animais.setEspecie(especie);
+            animais.setIdade(idade);
+            animais.setPeso(peso);
+
+            System.out.println("\n--- FICHA ---");
+            System.out.println(animais.getNome());
+            System.out.println(animais.getEspecie());
+            System.out.println(animais.getIdade());
+            System.out.println(animais.getPeso());
+
+            if (i == n1 - 1){
+                System.out.println("Cadastro encerrado.");
+            }
+            else {
+                System.out.println("\n--- NOVA FICHA ---");
+            }
+
+        }
+
+    }
+    public static class Animal{
+        String nome;
+        String especie;
+        int idade;
+        Double peso;
+
+        public String getNome() {
+            return nome;
+        }
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+        public String getEspecie(){
+            return especie;
+        }
+        public void setEspecie(String especie){
+            this.especie = especie;
+        }
+        public int getIdade(){
+            return idade;
+        }
+        public void setIdade(int idade){
+            this.idade = idade;
+        }
+        public Double getPeso(){
+            return peso;
+        }
+        public void setPeso(Double peso){
+            this.peso = peso;
+        }
+
+
+    }
+}
